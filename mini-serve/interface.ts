@@ -7,10 +7,10 @@ type Redirect = Rewrite;
 
 export default interface Config {
   entry: string;
-  rewrites: Rewrite[];
-  redirects: Redirect[];
-  etag: boolean;
-  cleanUrls: boolean;
-  trailingSlash: boolean;
-  symlink: boolean;
+  rewrites?: Rewrite[];
+  redirects?: Redirect[];
+  etag?: boolean;
+  cleanUrls?: boolean;
+  trailingSlash?: boolean;
+  symlink?: boolean;
 }

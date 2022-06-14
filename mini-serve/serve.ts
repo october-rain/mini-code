@@ -1,5 +1,5 @@
 import http, { IncomingMessage, ServerResponse } from "node:http";
-import path from "node:path";
+// import path from "node:path";
 import serveHandler from "./handler";
 import arg from "arg";
 import { isNumeric } from "./utils";
@@ -15,7 +15,7 @@ function startEndpoint(port: number, entry: string) {
   const server = http.createServer(
     (req: IncomingMessage, res: ServerResponse) => {
       console.log("start 执行");
-      serveHandler();
+      serveHandler(req, res, { entry });
     }
   );
 
