@@ -1,3 +1,13 @@
+## 可以学到什么？
+
+1. 了解静态资源服务器的原理
+2. 学习了解 `arg` 的使用
+3. 学习部分 `node` 内置模块的使用
+
+## 如何学习？
+
+1. 阅读此 `README.md`
+2. 阅读博客 [手写功能完善的静态资源服务器](https://october-rain.vercel.app/docs/frontend/deploy/complete-serve)
 ## 设计思路：
 
 参考 [serve](https://github.com/vercel/serve/blob/3e59bc1fba/bin/serve.js)、[serve-handler](https://github.com/vercel/serve-handler/blob/master/src/index.js)
