@@ -47,13 +47,25 @@ class FormStore {
   };
 
   setCallbacks = (callback: any) => {
-    this.callbacks = {...this.callbacks, ...callback};
-  }
+    this.callbacks = { ...this.callbacks, ...callback };
+  };
 
   validate = () => {
     const err: any[] = [];
 
-    // todo validate
+    this.fieldEntities.forEach((entity) => {
+      const { name, rules } = entity.props;
+
+      const value = this.getFieldValue(name);
+      let requiredRule = rules.find((rule: any) => rule["required"]) || {};
+
+      if (requiredRule.required && (value === undefined || value === "")) {
+        err.push({ errMsg: requiredRule.message, value });
+      }
+
+      return err
+    });
+
     return err;
   };
 
@@ -61,13 +73,12 @@ class FormStore {
     console.log("submit");
     const { onFinish, onFinishFailed } = this.callbacks;
     const err = this.validate();
-
     if (err.length === 0) {
       // 校验成功
-        onFinish(this.getFieldsValue());
+      onFinish(this.getFieldsValue());
     } else {
       // 校验失败
-        onFinishFailed(err);
+      onFinishFailed(err);
     }
   };
 

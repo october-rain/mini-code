@@ -28,9 +28,9 @@ export const MiniRCFieldForm = () => {
         <Field name="password" rules={[passworRules]}>
           <Input />
         </Field>
-        <Field name="submit">
+        {/* <Field name="submit"> */}
           <button>submit</button>
-        </Field>
+        {/* </Field> */}
       </Form>
     </div>
   );
