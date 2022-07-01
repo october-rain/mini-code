@@ -94,13 +94,16 @@ class FormStore {
   };
 }
 
-export default function useForm() {
+export default function useForm(form: any) {
   // 存一个 Form 实例，在组件卸载之前，都是同一个
   const formRef = useRef<any>();
-
   if (!formRef.current) {
-    const formStore = new FormStore();
-    formRef.current = formStore.getForm();
+    if(form) {
+      formRef.current = form
+    } else {
+      const formStore = new FormStore();
+      formRef.current = formStore.getForm();
+    }
   }
 
   return [formRef.current];
