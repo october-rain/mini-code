@@ -46,6 +46,7 @@ export default class Field extends Component<FieldProps, FieldState> {
     console.log("render");
     const { children } = this.props;
 
+    // 让 Field 的子组件变成受控组件
     const returnChildrenNode = React.cloneElement(
       children,
       this.getControlled()
