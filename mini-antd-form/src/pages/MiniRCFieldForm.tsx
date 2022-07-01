@@ -1,4 +1,4 @@
-import React, { useEffect, Component } from "react";
+import React, { Component } from "react";
 import Form, { Field, useForm } from "../component/mini-rc-form";
 import Input from "../component/input";
 
